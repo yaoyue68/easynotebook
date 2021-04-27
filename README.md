@@ -1,2 +1,3 @@
 # easynotebook
- 绠�鏄撹浜嬫湰
+ 
+简易记事本
