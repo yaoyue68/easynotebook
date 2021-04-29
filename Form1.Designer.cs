@@ -39,6 +39,11 @@
             this.样式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.字体ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.颜色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.编码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.默认ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uTF8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aNTIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gBK232ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.版本说明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.待实现功能ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +54,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.marklocation = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.corderlabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +66,7 @@
             this.文件ToolStripMenuItem,
             this.格式ToolStripMenuItem,
             this.样式ToolStripMenuItem,
+            this.编码ToolStripMenuItem,
             this.关于ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -135,6 +142,45 @@
             this.颜色ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.颜色ToolStripMenuItem.Text = "颜色";
             this.颜色ToolStripMenuItem.Click += new System.EventHandler(this.颜色ToolStripMenuItem_Click);
+            // 
+            // 编码ToolStripMenuItem
+            // 
+            this.编码ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.默认ToolStripMenuItem,
+            this.uTF8ToolStripMenuItem,
+            this.aNTIToolStripMenuItem,
+            this.gBK232ToolStripMenuItem});
+            this.编码ToolStripMenuItem.Name = "编码ToolStripMenuItem";
+            this.编码ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.编码ToolStripMenuItem.Text = "编码";
+            // 
+            // 默认ToolStripMenuItem
+            // 
+            this.默认ToolStripMenuItem.Name = "默认ToolStripMenuItem";
+            this.默认ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.默认ToolStripMenuItem.Text = "默认";
+            this.默认ToolStripMenuItem.Click += new System.EventHandler(this.默认ToolStripMenuItem_Click);
+            // 
+            // uTF8ToolStripMenuItem
+            // 
+            this.uTF8ToolStripMenuItem.Name = "uTF8ToolStripMenuItem";
+            this.uTF8ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.uTF8ToolStripMenuItem.Text = "UTF-8";
+            this.uTF8ToolStripMenuItem.Click += new System.EventHandler(this.uTF8ToolStripMenuItem_Click);
+            // 
+            // aNTIToolStripMenuItem
+            // 
+            this.aNTIToolStripMenuItem.Name = "aNTIToolStripMenuItem";
+            this.aNTIToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.aNTIToolStripMenuItem.Text = "ASCII";
+            this.aNTIToolStripMenuItem.Click += new System.EventHandler(this.aNTIToolStripMenuItem_Click);
+            // 
+            // gBK232ToolStripMenuItem
+            // 
+            this.gBK232ToolStripMenuItem.Name = "gBK232ToolStripMenuItem";
+            this.gBK232ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.gBK232ToolStripMenuItem.Text = "GB2312";
+            this.gBK232ToolStripMenuItem.Click += new System.EventHandler(this.gBK232ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
@@ -213,7 +259,7 @@
             // 
             this.marklocation.AutoSize = true;
             this.marklocation.ForeColor = System.Drawing.Color.Blue;
-            this.marklocation.Location = new System.Drawing.Point(411, 562);
+            this.marklocation.Location = new System.Drawing.Point(416, 574);
             this.marklocation.Name = "marklocation";
             this.marklocation.Size = new System.Drawing.Size(0, 15);
             this.marklocation.TabIndex = 4;
@@ -221,7 +267,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(491, 8);
+            this.label1.Location = new System.Drawing.Point(547, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 5;
@@ -229,11 +275,22 @@
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDoubleClick);
             // 
+            // corderlabel
+            // 
+            this.corderlabel.AutoSize = true;
+            this.corderlabel.Location = new System.Drawing.Point(634, 574);
+            this.corderlabel.Name = "corderlabel";
+            this.corderlabel.Size = new System.Drawing.Size(37, 15);
+            this.corderlabel.TabIndex = 6;
+            this.corderlabel.Text = "默认";
+            this.corderlabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 593);
+            this.Controls.Add(this.corderlabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.marklocation);
             this.Controls.Add(this.listBox1);
@@ -277,6 +334,12 @@
         private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 版本说明ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 待实现功能ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 编码ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uTF8ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gBK232ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aNTIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 默认ToolStripMenuItem;
+        private System.Windows.Forms.Label corderlabel;
     }
 }
 
